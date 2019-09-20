@@ -1,6 +1,6 @@
 # CS359-Project-2-Understanding-Cache-Memories
 
-The lab consists of two parts, part A and part B. In the part A, there is a small C program that simulates the behavior of a cache memory. In the part B, a matrix transpose function is optimized to minimize the number of cache misses. The two part will help us to understand the impact that cache memories can have on the performance of a program. Detailed descriptions can be find in Guide.pdf
+The lab consists of two parts, part A and part B. In the part A, there is a small C program that simulates the behavior of a cache memory. In the part B, a matrix transpose function is optimized to minimize the number of cache misses. The two part will help us to understand the impact that cache memories can have on the performance of a program. Detailed descriptions can be find in [Guide](./Guide.pdf 'Guide.pdf')
 
 ## Part A 
 ### Analysis
@@ -17,13 +17,9 @@ According to input s, E, and b, our cache consists of 2s sets and each set consi
 Initialize global clock to 0 and increase it every time we check a cache access. Assign the current clock to the block latest accessed.
 
 ### Code
-See csim.c
+See code/csim.c
 
-### Result
 
-Figure 1 shows the result my program csim.c gets and Figure 2 shows the result the right program csim-ref.c gets. As we can see, them are the same, that is my program is right under those arguments.
-
-Figure 3 shows the result we get when we run test-csim.c. As we can see, the program always get the right result under all these seven tests. Thus, the program is right.
 
 ## Part B
 
@@ -39,13 +35,13 @@ For 64×64 matrix A,each row contains 8 blocks, which means elements in the same
 For 61×67 matrix, it’s hard to handle like 32×32 matrix and 64×64 matrix, because the number of element in a row or column isn’t a multiple of 8. However, the required number of miss is 2000, which is much looser, so we can try diﬀerent division strategies. Ihavetried 4×4 sub-matrix, 8×8 sub-matrix, and 16×16 sub-matrix. The result of 16×16 sub-matrix is less than 2000. The results of other two strategies are greater than 2000.
 
 ### Code
-See trans.c
+See code/trans.c
 
-### Result
+## Result
 
-Figure 4, Figure 5, and Figure 6 show the test for 32×32 matrix transposition, 64×64 matrix transposition, and 61×67 matrix transposition. As we can see,the number of miss is 287, 1179, and 1992, which are less than 300, 1300, and 2000. 
-Therefore, our solution is correct. Put it all together by driver.py, and we get the ﬁnal result, 53 points, which is the best points we can get for part A and part B.
+Put it all together by driver.py, and we get the ﬁnal result, 53 points, which is the best points we can get for part A and part B.
 
+![1](Result.PNG)
 
 
 
